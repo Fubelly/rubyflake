@@ -7,6 +7,8 @@ Gem::Specification.new do |s|
 
   s.author = "Matt Hogan"
   s.email = "m@fubelly.com"
+  s.homepage = "https://github.com/fubelly/rubyflake"
+  
   s.files = ["README.md", "lib/rubyflake.rb"]
 
   s.license = "MIT"
