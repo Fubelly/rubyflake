@@ -4,7 +4,7 @@ class Rubyflake
 
   FLAKE_TIMESTAMP_LENGTH = 41
 
-  FLAKE_RANDOM_LENGTH = 0b1111111111111111111111111
+  FLAKE_RANDOM_MAX = 0b1111111111111111111111111
   FLAKE_TIMESTAMP_SHIFT = 23
 
   def initialize(epoch = EPOCH)
@@ -16,7 +16,7 @@ class Rubyflake
     milliseconds = ((Time.now().to_f - @epoch) * 1000).to_i
 
     # Generate 23 random bits.
-    random_bits = Random.new.rand(0..Rubyflake::FLAKE_RANDOM_LENGTH)
+    random_bits = Random.new.rand(0..Rubyflake::FLAKE_RANDOM_MAX)
 
     # Shift our timestamp over 23 bits to make room for the random bits,
     # and then add the two together.
