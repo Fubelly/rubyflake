@@ -24,9 +24,19 @@ class Rubyflake
 
   end
 
+  # Extract the time from an ID.
+  #
+  def time(id)
+    Time.at(((id >> Rubyflake::FLAKE_TIMESTAMP_SHIFT) + @epoch) / 1000)
+  end
+
   class << self
     def generate(epoch = Rubyflake::EPOCH)
       Rubyflake.new(epoch).generate()
+    end
+    
+    def time(id, epoch = Rubyflake::EPOCH)
+      Rubyflake.new(epoch).time(id)
     end
   end
 
