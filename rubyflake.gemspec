@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.files = ["README.md", "lib/rubyflake.rb"]
 
   s.license = "MIT"
+
+  s.add_development_dependency "rspec"
 end
