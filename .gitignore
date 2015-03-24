@@ -8,6 +8,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+*emfile.lock
 
 ## Documentation cache and generated files:
 /.yardoc/
